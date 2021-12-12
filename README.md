@@ -9,10 +9,10 @@ This repository contains the dockerized Kusama blockchain node. I was able to do
 
 
 ## Usage 
-- install [docker](https://docs.docker.com/get-docker/)
+- Install [docker](https://docs.docker.com/get-docker/)
 - Check if your docker is running, if not start it. 
 - Clone the repository
-- cd into cloned project using your terminal and run docker command below:
+- Cd into the cloned project using your terminal and run the docker command below:
 
     ```shell
     docker-compose up
