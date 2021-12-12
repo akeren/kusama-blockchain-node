@@ -1,0 +1,42 @@
+version: '2'
+
+services:
+  polkadot:
+    container_name: polkadot
+    image: parity/polkadot
+    restart: always
+    ports:
+      - 30333:30333/tcp # p2p port
+      - 9933:9933/tcp # rpc port
+      - 9944:9944/tcp # ws port
+    volumes:
+      - ./node-data:/node-data
+    command: 
+      - --rpc-external
+      - --ws-external
+      - --rpc-cors
+      - all
+      - --chain=kusama
+      - --pruning
+      - archive
+      - -d
+      - /node-data/
+    networks:
+      - kusama-net
+  substrate:
+    container_name: substrate
+    image: parity/substrate-api-sidecar
+    restart: always
+    environment:
+      SAS_SUBSTRATE_WS_URL: ws://polkadot:9944
+    links:
+      - polkadot:polkadot
+    networks:
+      - kusama-net
+networks:
+  kusama-net:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.103.0.1/16
