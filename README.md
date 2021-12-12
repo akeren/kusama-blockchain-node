@@ -5,7 +5,7 @@
 
 ## Overview
 
-This repository contains the dockerized Kusama blockchain node. I was able to dockerized the blockchain node, run, and tested after allowing the node to synced fully. Interacted with the using some [JSON-RPC](https://polkadot.js.org/docs/substrate/rpc) commands and [Polkadot's API](https://polkadot.js.org/docs/api). 
+This repository contains the dockerized Kusama blockchain node. I was able to dockerized the blockchain node, run, and tested after allowing the node to synced fully. Interacted with the node using some [JSON-RPC](https://polkadot.js.org/docs/substrate/rpc) commands and [Polkadot's API](https://polkadot.js.org/docs/api). 
 
 
 ## Usage 
